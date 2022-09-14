@@ -10,28 +10,23 @@
 
 .textBottomSection {
   position: absolute;
-  bottom: 60px;
+  bottom: 40px;
   width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  text-align: center;
 }
 
 .winnerMove {
   text-transform: uppercase;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 22px;
   color: white;
-  position: absolute;
-  left: 50px;
+  margin-bottom: 10px;
 }
 
 .restartButton {
-  position: absolute;
   text-transform: uppercase;
-  font-size: 16px;
+  font-size: 18px;
   color: black;
   border-radius: 5px;
-  right: 50px;
-  text-align: right;
   cursor: pointer;
 }

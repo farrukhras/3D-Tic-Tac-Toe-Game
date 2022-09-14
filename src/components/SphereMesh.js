@@ -1,14 +1,26 @@
-import React from 'react';
+import React, { useRef } from "react";
+import { useFrame, useLoader } from "@react-three/fiber";
+import { TextureLoader } from 'three';
+import SphereTexture from "./sphere_texture.jpeg";
 
 function SphereMesh({ position }) {
+  const [sphereTexture] = useLoader(TextureLoader, [SphereTexture]);
+  const ref = useRef();
+
+  useFrame(() => {
+    if (ref.current) {
+      ref.current.rotation.y += 0.03;
+    }
+  });
+  
   return (
     <>
-      <mesh position={position} >
+      <mesh position={position} ref={ref}>
         <sphereBufferGeometry args={[0.6, 100, 100]} />
         <meshStandardMaterial
-          // color="white"
           metalness={0.85}
           roughness={0.1}
+          map={sphereTexture}
         />
       </mesh>
     </>
